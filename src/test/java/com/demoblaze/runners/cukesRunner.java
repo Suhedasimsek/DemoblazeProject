@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         features="src/test/resources/features",
         glue = "com/demoblaze/stepDefinition",
         dryRun = false,
-        tags =" @negativeLoginTest"
+        tags =" @wip"
 )
 public class cukesRunner {
 }
