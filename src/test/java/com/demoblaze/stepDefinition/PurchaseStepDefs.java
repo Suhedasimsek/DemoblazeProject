@@ -2,9 +2,12 @@ package com.demoblaze.stepDefinition;
 
 import com.demoblaze.pages.CartPage;
 import com.demoblaze.pages.PurchasePage;
+import com.demoblaze.utilities.BrowserUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
+import javax.sql.rowset.BaseRowSet;
 
 
 public class PurchaseStepDefs {
@@ -31,10 +34,14 @@ public class PurchaseStepDefs {
     }
     @When("The user places order and capture and log amount")
     public void the_user_places_order_and_capture_and_log_amount() {
+        cartPage.finishPurchase_mtd();
 
     }
     @Then("The user verifies purchase amount equals {int}")
-    public void the_user_verifies_purchase_amount_equals(Integer int1) {
+    public void the_user_verifies_purchase_amount_equals(int expectedAmount) {
+        cartPage.verifyPurchaseAmount(expectedAmount);
+
+
 
     }
 
